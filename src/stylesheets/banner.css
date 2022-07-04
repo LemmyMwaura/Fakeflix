@@ -1,0 +1,54 @@
+.home-banner{
+  min-height: 550px;
+  object-fit: contain;
+  position: relative;
+  color: #f5f5f5;
+}
+
+.banner-details{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  top: 50%;
+  left: 10%;
+  text-shadow: 0 0 10px #000;
+}
+
+.banner-title{
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.banner-description{
+  width: 40%;
+}
+
+.banner-buttons{
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+
+.banner-buttons button{
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.banner-fade-bottom{
+  position: absolute;
+  bottom: 0rem;
+  height: 7.4rem;
+  width: 100%;
+  background: linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111);
+}
+
+.btn-primary {
+  color: red;
+}
+
+.btn-secondary {
+  color: #fff;
+}
