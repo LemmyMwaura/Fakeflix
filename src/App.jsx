@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import HomeScreen from './components/HomeScreen'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <HomeScreen/>
+    <div className="app">
+      <Header/>
     </div>
   )
 }
