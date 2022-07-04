@@ -1,9 +1,20 @@
-body{
+@import "./stylesheets/header.css";
+@import "./stylesheets/banner.css";
+
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.app{
-  padding:0 2rem;
+.btn {
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react"
 import { Routes, Route, Link } from "react-router-dom"
 import HomeScreen from "./HomeScreen"
-import "../stylesheets/header.css"
 
 function Header() {
   const nav = useRef(null)
