@@ -6,7 +6,7 @@ function App() {
   const queryClient = new QueryClient()
 
   return (
-    <QueryClientProvider clinet={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <div className="app">
         <Header />
       </div>
