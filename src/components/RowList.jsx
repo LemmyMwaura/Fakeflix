@@ -5,8 +5,15 @@ import movieCategories from "../utils/MovieCategories"
 export default function RowList() {
   return (
     <div className="row-list">
-      {movieCategories.map(category => {
-        return <Row key={category.id} title={category.title} fetchUrl={category.link} />
+      {movieCategories.map((category) => {
+        return (
+          <Row
+            key={category.id}
+            title={category.title}
+            fetchUrl={category.link}
+            isLargeRow={category.isLargeRow}
+          />
+        )
       })}
     </div>
   )
