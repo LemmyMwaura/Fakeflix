@@ -1,7 +1,13 @@
 import { useRef } from "react"
 import { useQuery } from "react-query"
+
+//utils
 import axios from "../utils/Axios"
 import requests from "../utils/Requests"
+
+//icons
+import { GrPlayFill } from "react-icons/gr"
+import { BiInfoCircle } from "react-icons/bi"
 
 export default function Banner() {
   const movie = useRef(null)
@@ -42,12 +48,18 @@ export default function Banner() {
             movie.current?.title ||
             movie.current?.original_name}
         </h1>
-        <p className="banner-description">
+        <div className="banner-description">
           {truncate(`${movie.current?.overview}`, 180)}
-        </p>
+        </div>
         <div className="banner-buttons">
-          <button className="btn btn-primary">Play</button>
-          <button className="btn btn-sec">More Info</button>
+          <button className="btn btn-primary">
+            <GrPlayFill />
+            <span>Play</span>
+          </button>
+          <button className="btn btn-sec">
+            <BiInfoCircle className="tooltip-info"/>
+            <span>More Info</span>
+          </button>
         </div>
       </div>
       <div className="banner-fade-bottom"></div>

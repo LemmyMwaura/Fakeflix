@@ -10,13 +10,13 @@
   display: flex;
   flex-direction: column;
   gap:10px;
-  top: 50%;
+  top: 45%;
   left: 5%;
   text-shadow: 0 0 10px #000;
 }
 
 .banner-title{
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -24,6 +24,7 @@
 
 .banner-description{
   width: 50%;
+  font-size: 1rem;
 }
 
 .banner-buttons{
@@ -33,22 +34,31 @@
 }
 
 .banner-buttons button{
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
   transition: 0.5s ease;
+}
+
+.tooltip-info{
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .banner-fade-bottom{
   position: absolute;
   bottom: 0rem;
-  height: 7.4rem;
+  height: 8rem;
   width: 100%;
   background: linear-gradient(180deg, transparent, rgba(37,37,37,0.61), #111);
 }
 
 .btn-primary {
-  color: red;
+  background-color: #fff;
 }
 
-.btn-secondary {
-  color: #fff;
+.btn-sec {
+  color: white;
+  background-color: rgba(255,255,255,0.4);
 }
