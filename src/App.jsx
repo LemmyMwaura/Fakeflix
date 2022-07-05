@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header'
+import { QueryClientProvider, QueryClient } from "react-query"
+import Header from "./components/Header"
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const queryClient = new QueryClient()
 
   return (
-    <div className="app">
-      <Header/>
-    </div>
+    <QueryClientProvider clinet={queryClient}>
+      <div className="app">
+        <Header />
+      </div>
+    </QueryClientProvider>
   )
 }
 
