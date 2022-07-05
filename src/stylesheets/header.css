@@ -1,5 +1,5 @@
 .primary-nav{
-  height: 4rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,12 +13,26 @@
   z-index: 100;
 }
 
+.left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.primary-nav a{
+  color: #fff;
+  font-size: 0.7rem;
+  transition: 0.5s ease;
+}
+
 .scrolled{
   background-color: black;
 }
 
 .svg-icon-netflix-logo{
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   fill: #e50914;
+  transform: translateY(0.15rem);
 }

@@ -18,8 +18,6 @@ export default function Banner() {
       ]
   }
 
-  console.log(movie.current)
-
   const truncate = (str, maxLength) => {
     if (str?.length > maxLength) {
       return str.substring(0, maxLength) + "..."
