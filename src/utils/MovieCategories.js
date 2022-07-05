@@ -2,8 +2,15 @@ import requests from "../utils/Requests"
 
 const movieCategories = [
   {
+    id:4,
+    title: "Netflix Originals",
+    isLargeRow: true,
+    link: requests.fetchNetflixOriginals,
+  },
+  {
     id:1,
     title: "Actions Movies",
+    isLargeRow: true,
     link: requests.fetchActionMovies,
   },
   {
@@ -15,11 +22,6 @@ const movieCategories = [
     id:3,
     title: "Romance Movies",
     link: requests.fetchRomanceMovies,
-  },
-  {
-    id:4,
-    title: "Sci-Fi Movies",
-    link: requests.fetchSciFiMovies,
   },
   {
     id:5,
