@@ -11,7 +11,7 @@
   flex-direction: column;
   gap:10px;
   top: 50%;
-  left: 10%;
+  left: 5%;
   text-shadow: 0 0 10px #000;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .banner-description{
-  width: 40%;
+  width: 50%;
 }
 
 .banner-buttons{
