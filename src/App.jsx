@@ -1,4 +1,5 @@
 import { QueryClientProvider, QueryClient } from "react-query"
+import AuthProvider from "./components/Auth"
 import Header from "./components/Header"
 import "./App.css"
 
@@ -7,9 +8,11 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="app">
-        <Header />
-      </div>
+      <AuthProvider>
+        <div className="app">
+          <Header />
+        </div>
+      </AuthProvider>
     </QueryClientProvider>
   )
 }

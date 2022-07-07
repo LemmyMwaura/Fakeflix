@@ -1,6 +1,10 @@
 import { useRef, useEffect } from "react"
 import { Routes, Route, Link } from "react-router-dom"
+import RequireAuth from "./RequireAuth"
+
+//components
 import HomeScreen from "./HomeScreen"
+import Login from "./Login"
 
 function Header() {
   const nav = useRef(null)
@@ -49,7 +53,15 @@ function Header() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <HomeScreen />
+            </RequireAuth>
+          }
+        />
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </div>
   )
