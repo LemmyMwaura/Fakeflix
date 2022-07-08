@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react"
 import { Routes, Route, Link } from "react-router-dom"
-import RequireAuth from "./RequireAuth"
+import CheckAuth from "./CheckAuth"
 
 //components
 import HomeScreen from "./HomeScreen"
@@ -49,21 +49,21 @@ function Header() {
           <Link to="/">My List</Link>
         </div>
         <div className="profile">
-          <Link to='/'>kids</Link>
+          <Link to="/">kids</Link>
           <Link to="/">Profile</Link>
         </div>
       </nav>
 
       <Routes>
+        <Route path="/browse" element={<HomeScreen />} />
         <Route
-          path="/browse"
+          path="/"
           element={
-            <RequireAuth>
-              <HomeScreen />
-            </RequireAuth>
+            <CheckAuth>
+              <Login />
+            </CheckAuth>
           }
-        />
-        <Route path="/" element={<Login />}></Route>
+        ></Route>
         <Route path="/signin" element={<SignIn />}></Route>
       </Routes>
     </div>
