@@ -1,6 +1,9 @@
-import { useRef } from "react"
-import { auth } from "../Auth/firebase"
 import { useForm } from "react-hook-form"
+import {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "../Auth/firebaseConfig"
 
 const SignIn = () => {
   const {
@@ -10,17 +13,25 @@ const SignIn = () => {
     formState: { errors },
   } = useForm()
 
-  const emailRef = useRef(null)
-  const passwordRef = useRef(null)
-
   const signIn = (data) => {
-    console.log(data)
-    const { emailOrPhoneNumber, password } = data
+    signInWithEmailAndPassword(auth, data.emailOrPhoneNumber, data.password)
+    .then((user) => {
+      console.log(user)
+    })
+    .catch((err) => {
+      alert(err.message)
+    })
     reset()
   }
 
   const signUp = (data) => {
-    console.log(data)
+    createUserWithEmailAndPassword(auth, data.emailOrPhoneNumber, data.password)
+      .then((userCredential) => {
+        console.log(userCredential)
+      })
+      .catch((err) => {
+        alert(err.message)
+      })
     reset()
   }
 
@@ -51,7 +62,6 @@ const SignIn = () => {
           <h2>Sign In</h2>
           <input
             type="text"
-            ref={emailRef}
             placeholder="email or phone number"
             {...register("emailOrPhoneNumber", { required: true })}
           />
@@ -60,7 +70,6 @@ const SignIn = () => {
           )}
           <input
             type="password"
-            ref={passwordRef}
             placeholder="password"
             {...register("password", { required: true })}
           />
@@ -79,7 +88,9 @@ const SignIn = () => {
           </div>
           <div className="signup-footer">
             <span>New to Netflix?</span>
-            <button className="btn sign-up-btn" onClick={handleSubmit(signUp)}>Sign Up Now</button>
+            <button className="btn sign-up-btn" onClick={handleSubmit(signUp)}>
+              Sign Up Now
+            </button>
           </div>
         </form>
       </div>
