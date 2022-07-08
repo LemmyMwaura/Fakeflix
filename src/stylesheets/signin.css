@@ -1,0 +1,77 @@
+.sign-in-screen{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  padding: 2.5rem;
+  width: 20rem;
+  z-index: 5;
+}
+
+.sign-in-screen *{
+  width: 100%;
+}
+
+.sign-in-screen.active{
+  display: flex;
+}
+
+.sign-in-screen input{
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: #333333;
+  color: white;
+}
+
+.sign-in-screen input::placeholder{
+  font-size: 0.8rem;
+  color: #808c8c;
+}
+
+.sign-in-screen button{
+  background-color:#e50914;
+  color: white;
+  font-weight: bold;
+}
+
+.signin-screen-check{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.signin-screen-check *{
+  width: auto;
+}
+
+.signin-screen-check .check{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.signin-screen-check input[type='checkbox']{
+  border-radius: 0.2rem;
+  background: #e50914;
+  border: none;
+  outline: none;
+}
+
+.signup-footer{
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #808c8c;
+}
+
+.signup-footer a {
+  color: white;
+}
