@@ -1,24 +1,72 @@
+.signin-wrapper{
+  color: white;
+  position: relative;
+  background-image: url(../assets/images/home-banner-image.jpg);
+  background-position: center center;
+  background-size: cover;
+  object-fit: contain;
+  height: 100vh;
+}
+
+.signin-fade-in-top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.0));
+}
+
+.signin-fade-in-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.9));
+}
+
+.signin-overlay{
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.signup-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2.5rem;
+}
+
+.signup-nav svg{
+  width: 7rem;
+  z-index: 5;
+}
+
 .sign-in-screen{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
   background-color: rgba(0,0,0,0.7);
   padding: 2.5rem;
   width: 20rem;
   z-index: 5;
 }
 
-.sign-in-screen *{
-  width: 100%;
+.sign-in-screen form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.sign-in-screen.active{
-  display: flex;
+.sign-in-screen *{
+  width: 100%;
 }
 
 .sign-in-screen input{
@@ -33,6 +81,11 @@
 .sign-in-screen input::placeholder{
   font-size: 0.8rem;
   color: #808c8c;
+}
+
+.sign-in-screen span.error{
+  color: #e87c03;
+  margin: -1rem 0;
 }
 
 .sign-in-screen button{
@@ -74,4 +127,8 @@
 
 .signup-footer a {
   color: white;
+}
+
+button.sign-up-btn{
+  background: none;
 }

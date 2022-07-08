@@ -5,6 +5,7 @@ import RequireAuth from "./RequireAuth"
 //components
 import HomeScreen from "./HomeScreen"
 import Login from "./Login"
+import SignIn from "./SignIn"
 
 function Header() {
   const nav = useRef(null)
@@ -48,20 +49,22 @@ function Header() {
           <Link to="/">My List</Link>
         </div>
         <div className="profile">
+          <Link to='/'>kids</Link>
           <Link to="/">Profile</Link>
         </div>
       </nav>
 
       <Routes>
         <Route
-          path="/"
+          path="/browse"
           element={
             <RequireAuth>
               <HomeScreen />
             </RequireAuth>
           }
         />
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/signin" element={<SignIn />}></Route>
       </Routes>
     </div>
   )

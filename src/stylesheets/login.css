@@ -32,6 +32,7 @@
 
 .login-nav .signup{
   padding: 0.4rem 1rem;
+  font-size: 0.8rem;
   border-radius: 0.2rem;
   background-color: #e50914;
 }
@@ -73,10 +74,6 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-}
-
-.login-content.active{
-  display: none;
 }
 
 .login-content h1{
