@@ -9,19 +9,26 @@ import requests from "../utils/Requests"
 import { GrPlayFill } from "react-icons/gr"
 import { BiInfoCircle } from "react-icons/bi"
 
-export default function Banner() {
+export default function Banner({ link }) {
   const movie = useRef(null)
   const { fetchNetflixOriginals } = requests
 
   const { data: request, isLoading } = useQuery("banner-movie", () =>
-    axios.get(fetchNetflixOriginals)
+    axios.get(link)
   )
 
   if (!isLoading) {
-    movie.current =
-      request?.data?.results[
+    const getMovie = () => {
+      return request?.data?.results[
         Math.floor(Math.random() * request?.data?.results.length - 1)
       ]
+    }
+
+    movie.current = getMovie()
+    
+    if (movie.current?.backdrop_path == null) {
+      movie.current = getMovie()
+    }
   }
 
   const truncate = (str, maxLength) => {
@@ -57,7 +64,7 @@ export default function Banner() {
             <span>Play</span>
           </button>
           <button className="btn btn-sec">
-            <BiInfoCircle className="tooltip-info"/>
+            <BiInfoCircle className="tooltip-info" />
             <span>More Info</span>
           </button>
         </div>
