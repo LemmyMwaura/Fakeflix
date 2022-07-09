@@ -3,6 +3,7 @@
 @import "./stylesheets/login.css";
 @import "./stylesheets/signin.css";
 @import "./stylesheets/homeinfo.css";
+@import "./stylesheets/modal.css";
 @import "./stylesheets/row.css";
 
 *,
@@ -27,4 +28,37 @@ a{
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* Scroll */
+/* chrome + safari custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  cursor: pointer;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  backdrop-filter: blur(30px);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:rgb(179, 179, 179);
+  backdrop-filter: blur(30px);
+  cursor: pointer;
+}
+
+/* firefox custom scrollbar */
+@supports (scrollbar-color: white black) {
+  * {
+    scrollbar-color: white black;
+    scrollbar-width: thin;
+  }
 }
