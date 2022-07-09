@@ -1,5 +1,5 @@
-import Banner from "./Banner"
-import RowList from "./RowList"
+import Banner from "../components/Banner"
+import RowList from "../components/RowList"
 
 //utils
 import requests from "../utils/Requests"
