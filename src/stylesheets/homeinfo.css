@@ -1,0 +1,20 @@
+.info{
+  color: white;
+}
+
+.info-wrapper{
+  display: grid;
+  min-height: 50vh;
+  padding: 50px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info-text{
+
+}
+
+.info-image{
+  background-image: url(../assets/images/home-tv.jpg);
+  background-size: cover;
+  background-position: center center;
+}

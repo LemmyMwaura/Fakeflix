@@ -20,6 +20,11 @@
   height: 100%;
 }
 
+.profile {
+  display: flex;
+  gap: 10px;
+}
+
 .primary-nav a{
   color: #fff;
   font-size: 0.7rem;

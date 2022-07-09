@@ -1,12 +1,16 @@
 import { useRef, useEffect } from "react"
 import { Routes, Route, Link } from "react-router-dom"
+import { useSelector } from "react-redux"
+
+//Authenticators
 import CheckAuth from "../components/CheckAuth"
+import RequireAuth from "../components/RequireAuth"
 
 //components
-import { useSelector } from "react-redux"
 import HomeScreen from "./HomeScreen"
 import Login from "./Login"
 import SignIn from "./SignIn"
+import Profile from "./Profile"
 
 function Header() {
   const nav = useRef(null)
@@ -52,13 +56,20 @@ function Header() {
           </div>
           <div className="profile">
             <Link to="/">kids</Link>
-            <Link to="/">Profile</Link>
+            <Link to="/profile">Profile</Link>
           </div>
         </nav>
       )}
 
       <Routes>
-        <Route path="/browse" element={<HomeScreen />} />
+        <Route
+          path="/browse"
+          element={
+            <RequireAuth>
+              <HomeScreen />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/"
           element={
@@ -68,6 +79,7 @@ function Header() {
           }
         ></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </div>
   )
