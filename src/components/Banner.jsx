@@ -1,9 +1,5 @@
+import { fetchMoviesQuery } from "../hooks/useQueryHook"
 import { useRef } from "react"
-import { useQuery } from "react-query"
-
-//utils
-import axios from "../utils/Axios"
-import requests from "../utils/Requests"
 
 //icons
 import { GrPlayFill } from "react-icons/gr"
@@ -11,10 +7,10 @@ import { BiInfoCircle } from "react-icons/bi"
 
 export default function Banner({ link }) {
   const movie = useRef(null)
-  const { fetchNetflixOriginals } = requests
-
-  const { data: request, isLoading } = useQuery("banner-movie", () =>
-    axios.get(link)
+  const { data: request, isLoading } = fetchMoviesQuery(
+    "banner-movie",
+    link,
+    10000
   )
 
   if (!isLoading) {
@@ -25,7 +21,7 @@ export default function Banner({ link }) {
     }
 
     movie.current = getMovie()
-    
+
     if (movie.current?.backdrop_path == null) {
       movie.current = getMovie()
     }

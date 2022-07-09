@@ -1,6 +1,5 @@
-import { useQuery } from "react-query"
+import { fetchMoviesQuery } from "../hooks/useQueryHook"
 import { useSelector, useDispatch } from "react-redux"
-import axios from "../utils/Axios"
 
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -17,8 +16,11 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
   const showModal = useSelector((state) => state.modal.isOpen)
   const baseURL = "https://image.tmdb.org/t/p/original/"
 
-  const { data: request, isLoading } = useQuery(title, () =>
-    axios.get(fetchUrl)
+  const { data: request, isLoading } = fetchMoviesQuery(
+    title,
+    fetchUrl,
+    false,
+    15000
   )
 
   const movieData = (movie) => {
@@ -32,7 +34,7 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
 
   return (
     <div className="movie-category">
-      {showModal && <Modal/>}
+      {showModal && <Modal />}
       <h1 className="category-title">{title}</h1>
       <Swiper
         className="movies-container mySwiper"
