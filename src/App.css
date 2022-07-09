@@ -33,7 +33,7 @@ a{
 /* Scroll */
 /* chrome + safari custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
   cursor: pointer;
   height: 1em;
 }
