@@ -1,18 +1,19 @@
 import { QueryClientProvider, QueryClient } from "react-query"
 import { useEffect } from "react"
 import { onAuthStateChanged, auth } from "./Auth/firebaseConfig"
-
+import { useNavigate } from "react-router-dom"
 //redux
 import { useDispatch } from "react-redux"
 import { userLogIn, userLogOut } from "./features/userSlice"
 
 //components
-import Header from "./components/Header"
+import Header from "./Layout/Header"
 import "./App.css"
 
 function App() {
   const queryClient = new QueryClient()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (userAuth) => {
@@ -21,6 +22,7 @@ function App() {
           uid:userAuth.uid,
           email:userAuth.email,
         }))
+        navigate('/browse')
       } else {
         dispatch(userLogOut())
       }
