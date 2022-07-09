@@ -25,6 +25,7 @@ function App() {
         navigate('/browse')
       } else {
         dispatch(userLogOut())
+        navigate('/')
       }
     })
 

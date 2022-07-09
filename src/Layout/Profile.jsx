@@ -1,15 +1,12 @@
-import { useDispatch } from "react-redux"
-import { userLogOut } from "../features/userSlice"
-import { useNavigate } from "react-router"
+import { signOut, auth } from "../Auth/firebaseConfig"
 import image from "../assets/images/avatar.png"
 
 const Profile = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
   const handleLogOut = () => {
-    dispatch(userLogOut())
-    navigate('/')
+    signOut(auth).then(() => {
+    }).catch((err) => {
+      alert(err.message)
+    })
   }
 
   return (

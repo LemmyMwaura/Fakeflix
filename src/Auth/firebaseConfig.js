@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 import {
   getAuth,
+  signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -24,8 +25,9 @@ const auth = getAuth(app)
 export {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  auth,
   onAuthStateChanged,
+  signOut,
+  auth,
 }
 
 export default db
