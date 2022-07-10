@@ -1,4 +1,4 @@
-.signin-wrapper{
+.signin-wrapper {
   color: white;
   position: relative;
   background-image: url(../assets/images/home-banner-image.jpg);
@@ -8,26 +8,26 @@
   height: 100vh;
 }
 
-.signin-fade-in-top{
+.signin-fade-in-top {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 8rem;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.0));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.signin-fade-in-bottom{
+.signin-fade-in-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 8rem;
-  background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.9));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 }
 
-.signin-overlay{
-  background-color: rgba(0,0,0,0.6);
+.signin-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   left: 0;
@@ -35,45 +35,51 @@
   height: 100%;
 }
 
-.signup-nav{
+.signup-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2.5rem;
 }
 
-.signup-nav svg{
+.signup-nav svg {
   width: 7rem;
   z-index: 5;
 }
 
-.sign-in-screen{
+.sign-in-screen {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 2.5rem;
   width: 20rem;
   z-index: 5;
 }
 
-.sign-in-screen form{
+.sign-in-screen form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
 }
 
-.sign-in-screen form h2{
+.firebase-error {
+  background: #e87c03;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+}
+
+.sign-in-screen form h2 {
   font-size: 2rem;
 }
 
-.sign-in-screen *{
+.sign-in-screen * {
   width: 100%;
 }
 
-.sign-in-screen input{
+.sign-in-screen input {
   border: none;
   outline: none;
   padding: 0.5rem 1rem;
@@ -82,47 +88,47 @@
   color: white;
 }
 
-.sign-in-screen input::placeholder{
+.sign-in-screen input::placeholder {
   font-size: 0.8rem;
   color: #808c8c;
 }
 
-.sign-in-screen span.error{
+.sign-in-screen span.error {
   color: #e87c03;
   margin: -1rem 0;
 }
 
-.sign-in-screen button{
-  background-color:#e50914;
+.sign-in-screen button {
+  background-color: #e50914;
   color: white;
   font-weight: bold;
 }
 
-.signin-screen-check{
+.signin-screen-check {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.7rem;
 }
 
-.signin-screen-check *{
+.signin-screen-check * {
   width: auto;
 }
 
-.signin-screen-check .check{
+.signin-screen-check .check {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.signin-screen-check input[type='checkbox']{
+.signin-screen-check input[type="checkbox"] {
   border-radius: 0.2rem;
   background: #e50914;
   border: none;
   outline: none;
 }
 
-.signup-footer{
+.signup-footer {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
@@ -133,7 +139,7 @@
   color: white;
 }
 
-button.sign-up-btn{
+button.sign-up-btn {
   background: none;
 }
 
@@ -143,21 +149,18 @@ button.sign-up-btn{
   }
 }
 
-@media screen and (min-width: 583px){
-  .sign-in-screen{
+@media screen and (min-width: 583px) {
+  .sign-in-screen {
     width: 25rem;
   }
-  .sign-in-screen input{
-    font-size: 1rem;
-    height: 2.5rem;
-  }
-  .sign-in-screen input::placeholder{
-    font-size: 1rem;
-  }
-  .sign-in-btn{
+  .sign-in-screen input::placeholder,
+  .sign-in-screen input,
+  .sign-in-btn,
+  .firebase-error {
     font-size: 1rem;
   }
-  .signup-footer *{
+
+  .signup-footer * {
     font-size: 1.3rem;
   }
 }

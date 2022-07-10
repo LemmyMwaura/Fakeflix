@@ -3,10 +3,11 @@ import image from "../assets/images/avatar.png"
 
 const Profile = () => {
   const handleLogOut = () => {
-    signOut(auth).then(() => {
-    }).catch((err) => {
-      alert(err.message)
-    })
+    signOut(auth)
+      .then()
+      .catch((err) => {
+        alert(err.message)
+      })
   }
 
   return (
@@ -17,10 +18,7 @@ const Profile = () => {
         <div className="account-details">
           <h2>Profile & Controls</h2>
           <img className="profile-page-image" src={image} alt="image" />
-          <button
-            className="btn profile-btn"
-            onClick={() => handleLogOut()}
-          >
+          <button className="btn profile-btn" onClick={() => handleLogOut()}>
             Log Out
           </button>
         </div>

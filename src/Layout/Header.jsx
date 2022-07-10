@@ -10,14 +10,17 @@ import RequireAuth from "../components/RequireAuth"
 import HomeScreen from "./HomeScreen"
 import Login from "./Login"
 import SignIn from "./SignIn"
+import SignUp from "./SignUp"
 import Profile from "./Profile"
+import image from "../assets/images/avatar.png"
 
 function Header() {
   const nav = useRef(null)
+
   const user = useSelector(({ user }) => user.user)
 
   const handleScroll = () => {
-    if (scrollY > 100) {
+    if (nav.current && scrollY > 100) {
       nav.current.classList.add("scrolled")
     } else {
       nav.current.classList.remove("scrolled")
@@ -56,7 +59,9 @@ function Header() {
           </div>
           <div className="profile">
             <Link to="/">kids</Link>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">
+              <img className="profile-image" src={image} alt='profile image' />
+            </Link>
           </div>
         </nav>
       )}
@@ -79,6 +84,7 @@ function Header() {
           }
         ></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </div>

@@ -22,12 +22,18 @@
 
 .profile {
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.profile-image{
+  width: 30px;
+  border-radius: 0.2rem;
 }
 
 .primary-nav a{
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 1rem;
   transition: 0.5s ease;
 }
 
@@ -40,4 +46,19 @@
   height: 4rem;
   fill: #e50914;
   transform: translateY(0.15rem);
+}
+
+@media screen and (max-width: 768px){
+  .primary-nav a{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 580px){
+  .primary-nav .left a:nth-child(5),
+  .primary-nav .left a:nth-child(3),
+  .primary-nav .left a:nth-child(4),
+  .primary-nav .profile a:first-child{
+    display: none;
+  }
 }

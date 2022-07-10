@@ -21,6 +21,7 @@ function App() {
         dispatch(userLogIn({
           uid:userAuth.uid,
           email:userAuth.email,
+          name:userAuth.displayName,
         }))
         navigate('/browse')
       } else {

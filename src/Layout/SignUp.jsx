@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { auth, signInWithEmailAndPassword } from "../Auth/firebaseConfig"
+import {
+  auth,
+  updateProfile,
+  createUserWithEmailAndPassword,
+} from "../Auth/firebaseConfig"
 
-const SignIn = () => {
+const SignUp = () => {
   const [firebaseErr, setFirebaseErr] = useState(null)
   const navigate = useNavigate()
 
@@ -14,10 +18,17 @@ const SignIn = () => {
     formState: { errors },
   } = useForm()
 
-  const signIn = (data) => {
-    signInWithEmailAndPassword(auth, data.emailOrPhoneNumber, data.password)
-      .then(() => {
+  const signUp = (data) => {
+    createUserWithEmailAndPassword(auth, data.emailOrPhoneNumber, data.password)
+      .then((user) => {
         setFirebaseErr(null)
+        updateProfile(auth.currentUser, {
+          displayName: data.username,
+        })
+          .then()
+          .catch((err) => {
+            alert(err.message)
+          })
       })
       .catch((err) => {
         setFirebaseErr(err.message)
@@ -49,8 +60,16 @@ const SignIn = () => {
 
       <div className={`sign-in-screen`}>
         <form>
-          <h2>Sign In</h2>
+          <h2>Sign Up</h2>
           {firebaseErr && <div className="firebase-error">{firebaseErr}</div>}
+          <input
+            type="text"
+            placeholder="username"
+            {...register("username", { required: true })}
+          />
+          {errors.username && (
+            <span className="error">username is required</span>
+          )}
           <input
             type="text"
             placeholder="email or phone number"
@@ -67,8 +86,8 @@ const SignIn = () => {
           {errors.password && (
             <span className="error">Password is required</span>
           )}
-          <button className="btn sign-in-btn" onClick={handleSubmit(signIn)}>
-            Sign In
+          <button className="btn sign-in-btn" onClick={handleSubmit(signUp)}>
+            Sign Up
           </button>
           <div className="signin-screen-check">
             <div className="check">
@@ -80,8 +99,11 @@ const SignIn = () => {
         </form>
         <div className="signup-footer">
           <span>New to Netflix?</span>
-          <button className="btn sign-up-btn" onClick={() => navigate("/signup")}>
-            Sign Up Now
+          <button
+            className="btn sign-up-btn"
+            onClick={() => navigate("/signin")}
+          >
+            Login
           </button>
         </div>
       </div>
@@ -89,4 +111,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp
