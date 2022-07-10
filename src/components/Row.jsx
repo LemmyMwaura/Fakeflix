@@ -1,5 +1,5 @@
 import { fetchMoviesQuery } from "../hooks/useQueryHook"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -9,11 +9,9 @@ import "swiper/css/navigation"
 
 //Modal
 import { toggleModal, setMovie } from "../features/modalSlice"
-import Modal from "./Modal"
 
 export default function Row({ title, fetchUrl, isLargeRow = false }) {
   const dispatch = useDispatch()
-  const showModal = useSelector((state) => state.modal.isOpen)
   const baseURL = "https://image.tmdb.org/t/p/original/"
 
   const { data: request, isLoading } = fetchMoviesQuery(
@@ -34,7 +32,6 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
 
   return (
     <div className="movie-category">
-      {showModal && <Modal />}
       <h1 className="category-title">{title}</h1>
       <Swiper
         className="movies-container mySwiper"

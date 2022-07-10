@@ -57,7 +57,7 @@ const SignIn = () => {
         </svg>
       </nav>
 
-      <div className={`sign-in-screen ${true} && active`}>
+      <div className={`sign-in-screen`}>
         <form>
           <h2>Sign In</h2>
           <input
@@ -76,12 +76,12 @@ const SignIn = () => {
           {errors.password && (
             <span className="error">Password is required</span>
           )}
-          <button className="btn" onClick={handleSubmit(signIn)}>
+          <button className="btn sign-in-btn" onClick={handleSubmit(signIn)}>
             Sign In
           </button>
           <div className="signin-screen-check">
             <div className="check">
-              <input type="checkbox" />
+              <input type="checkbox" checked />
               <span>Remember me</span>
             </div>
             <span>Need Help?</span>

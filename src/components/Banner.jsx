@@ -1,12 +1,17 @@
 import { fetchMoviesQuery } from "../hooks/useQueryHook"
 import { useRef } from "react"
+import { useDispatch } from "react-redux"
 
 //icons
 import { GrPlayFill } from "react-icons/gr"
 import { BiInfoCircle } from "react-icons/bi"
 
+//modal
+import { toggleModal, setMovie } from "../features/modalSlice"
+
 export default function Banner({ link }) {
   const movie = useRef(null)
+  const dispatch = useDispatch()
   const { data: request, isLoading } = fetchMoviesQuery(
     "banner-movie",
     link,
@@ -25,6 +30,11 @@ export default function Banner({ link }) {
     if (movie.current?.backdrop_path == null) {
       movie.current = getMovie()
     }
+  }
+
+  const movieData = (movie) => {
+    dispatch(setMovie(movie))
+    dispatch(toggleModal())
   }
 
   const truncate = (str, maxLength) => {
@@ -59,7 +69,7 @@ export default function Banner({ link }) {
             <GrPlayFill />
             <span>Play</span>
           </button>
-          <button className="btn btn-sec">
+          <button className="btn btn-sec"  onClick={() => movieData(movie.current)}>
             <BiInfoCircle className="tooltip-info" />
             <span>More Info</span>
           </button>
