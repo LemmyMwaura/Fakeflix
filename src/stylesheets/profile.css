@@ -20,41 +20,64 @@
 }
 
 .profile-banner h1 {
-  padding: 2rem;
+  padding: 2rem 0;
   border-bottom: 2px solid grey;
 }
 
 .account-details {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   padding: 2rem 0;
   height: 10rem;
 }
 
+.details {
+  display: flex;
+  gap: 40px;
+}
+
+.user-details {
+  font-size: 0.8rem;
+}
+
 .profile-page-image {
   width: 4rem;
+  height: 4rem;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  background-color: #e87c03;
+  font-weight: bold;
 }
 
 .profile-btn {
   background-color: #e50914;
-  color: white;
   font-weight: bold;
+  color: white;
 }
 
 .profile-btn:active {
   transform: scale(0.95);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .profile-banner h1 {
     padding: 1rem 0;
   }
 
   .account-details {
-    grid-template-columns: none;
+    flex-direction: column;
+    justify-content: normal;
     gap: 2rem;
-    grid-template-rows: 1fr 1fr;
     height: 10rem;
+  }
+
+  .btns{
+    margin-top: 2rem;
   }
 }
