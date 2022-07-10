@@ -9,6 +9,7 @@
   min-width: 60vw;
   height: 80vh;
   background-color: #181818;
+  color: #f5f5f5;
   z-index: 99;
   cursor: pointer;
 }
@@ -52,7 +53,7 @@
 }
 
 .modal-movie-name{
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, calc(1rem + 10vw), 2.5rem);
   font-weight: bold;
 }
 
@@ -60,7 +61,7 @@
   display: flex;
   flex-direction: column;
   gap:10px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.5rem 1.5rem;
   font-family: 'Poppins', sans-serif !important;
 }
@@ -73,6 +74,7 @@
 .modal-footer{
   display: grid;
   gap: 5px;
+  margin-bottom: 1rem;
 }
 
 .modal-footer h4{
@@ -82,6 +84,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.modal-footer h4 span{
+  color: gold;
+}
+
 .modal-footer div{
   display: flex;
   align-items: center;
@@ -89,8 +95,8 @@
 }
 
 .modal-footer div span:first-child{
-  font-weight: bold; 
-  color: #787c7c;
+  font-weight: 500; 
+  color: #aab4b4;
 }
 
 /* chrome + safari custom scrollbar */
@@ -101,6 +107,7 @@
 .modal::-webkit-scrollbar-track {
   background: #181818;
   cursor: pointer;
+  margin-block: 0.5rem;
 }
 
 /* firefox custom scrollbar */
@@ -110,3 +117,43 @@
     scrollbar-width: thin;
   }
 }
+
+@media screen and (max-width: 1000px){
+  .modal{
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 700px){
+  .modal::-webkit-scrollbar {
+    display: none;
+  }
+  .modal{
+    width: 75vw;
+  }
+  .modal-movie-name{
+    font-size: 2rem;
+  }
+  .modal-movie-desc{
+    font-size: 0.8rem;
+  }
+  .modal-footer div span{
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 630px){
+  .modal{
+    width: 85vw;
+  }
+  .modal-movie-name{
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 600px){
+  .modal{
+    width: 90vw;
+  }
+  .modal-movie-name{
+    font-size: 1.5rem;
+  }
+}
+  

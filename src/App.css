@@ -31,6 +31,10 @@ a{
   cursor: pointer;
 }
 
+.btn:active{
+  transform: scale(0.95);
+}
+
 /* Scroll */
 /* chrome + safari custom scrollbar */
 ::-webkit-scrollbar {

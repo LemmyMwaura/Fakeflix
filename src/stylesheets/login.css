@@ -1,4 +1,4 @@
-.login-banner{
+.login-banner {
   color: white;
   position: relative;
   background-image: url(../assets/images/home-banner-image.jpg);
@@ -9,50 +9,50 @@
   border-bottom: 8px solid #222;
 }
 
-.login-nav{
+.login-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2.5rem;
 }
 
-.login-nav *{
+.login-nav * {
   z-index: 2;
   color: white;
 }
 
-.login-nav svg{
+.login-nav svg {
   width: 7rem;
   z-index: 5;
 }
 
-.login-nav .signup{
+.login-nav .signup {
   padding: 0.4rem 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border-radius: 0.2rem;
   background-color: #e50914;
 }
 
-.login-fade-in-top{
+.login-fade-in-top {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 8rem;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.0));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.login-fade-in-bottom{
+.login-fade-in-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 8rem;
-  background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.9));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 }
 
-.login-overlay{
-  background-color: rgba(0,0,0,0.6);
+.login-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
   left: 0;
@@ -60,7 +60,7 @@
   height: 100%;
 }
 
-.login-content{
+.login-content {
   z-index: 2;
   position: absolute;
   top: 56%;
@@ -72,57 +72,103 @@
   text-align: center;
 }
 
-.login-content h1{
-  font-size: 2.5rem;
+.login-content h1 {
+  font-size: clamp(2rem, calc(1.8rem + 1.7vw), 3.2rem);
   margin-bottom: 1rem;
-  max-width: 30rem;
   line-height: 1.1;
 }
 
-.login-content h2{
-  font-size: 1.4rem;
+.login-content h2 {
+  font-size: clamp(0.5rem, calc(0.5rem + 2vw), 1.6rem);
   font-weight: normal;
   margin-bottom: 2rem;
   line-height: 1;
 }
 
-.login-content h4{
-  font-size: 1rem;
+.login-content h4 {
+  font-size: clamp(0.5rem, calc(0.5rem + 2vw), 1.25rem);
   font-weight: 400;
   margin-bottom: 1rem;
   line-height: 1;
 }
 
-.login-input{
+.login-input {
   display: grid;
   width: 100%;
-  grid-template-columns: 2fr 1fr;
-  height: 2.8rem;
+  grid-template-columns: 1.5fr 1fr;
+  height: 3.5rem;
 }
 
 .login-input input {
   padding: 0.7rem 1rem;
+  font-size: 1rem;
   border: none;
   outline: none;
 }
 
-.input-btn{
+.input-btn {
   border: none;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   background-color: #e40914;
   cursor: pointer;
 }
 
-.input-btn span{
-  font-size: 1.3rem;
+.input-btn span {
+  font-size: clamp(0.5rem, calc(0.8rem + 2vw), 1.6rem);
   font-weight: 500;
   color: white;
 }
 
-.input-btn .input-icon{
+.input-btn .input-icon {
   font-size: 1rem;
-  color: white;
+  color: white !important;
+}
+
+@media screen and (max-width: 930px) {
+  .login-input {
+    gap: 20px;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+  .login-input input {
+    width: 100%;
+  }
+  .input-btn {
+    max-width: 12rem;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .login-content{
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 680px) {
+  .login-content{
+    width: 65vw;
+  }
+}
+@media screen and (max-width: 580px) {
+  .login-banner{
+    height: 80vh;
+  }
+  .login-nav svg {
+    width: 5rem;
+  }
+  .login-nav .signup {
+    font-size: 0.8rem;
+  }
+  .login-content{
+    width: 75vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  .login-content{
+    width: 85vw;
+  }
 }

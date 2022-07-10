@@ -1,5 +1,5 @@
 .home-banner{
-  height: 90vh;
+  height: 80vh;
   object-fit: contain;
   position: relative;
   color: #f5f5f5;
@@ -62,4 +62,10 @@
 .btn-sec {
   color: white;
   background-color: rgba(255,255,255,0.4);
+}
+
+@media screen and (max-width: 596px){
+  .banner-description{
+    width: 60%;
+  }
 }

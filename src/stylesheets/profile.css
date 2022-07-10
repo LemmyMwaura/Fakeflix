@@ -36,12 +36,25 @@
   width: 4rem;
 }
 
-.profile-btn{
+.profile-btn {
   background-color: #e50914;
   color: white;
   font-weight: bold;
 }
 
-.profile-btn:active{
+.profile-btn:active {
   transform: scale(0.95);
+}
+
+@media screen and (max-width: 500px) {
+  .profile-banner h1 {
+    padding: 1rem 0;
+  }
+
+  .account-details {
+    grid-template-columns: none;
+    gap: 2rem;
+    grid-template-rows: 1fr 1fr;
+    height: 10rem;
+  }
 }
