@@ -30,8 +30,8 @@ const Profile = () => {
           <div className="details">
             <img className="profile-page-image" src={image} alt="image" />
             <div className="user-details">
-              <h2>{user.name}</h2>
-              <h2>{user.email}</h2>
+              {user && <h2>{user.name}</h2>}
+              {user && <h2>{user.email}</h2>}
             </div>
           </div>
         </div>

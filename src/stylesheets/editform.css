@@ -8,6 +8,20 @@
   z-index: 5;
 }
 
+.overlay-icon{
+  position: absolute;
+  top: 7%;
+  left: 70vw;
+  font-size: 8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.overlay-icon:hover{
+  transform: rotate(90deg);
+}
+
 .edit-form{
   position: fixed;
   top: 50%;
@@ -30,6 +44,12 @@
 
 .edit-form form h1{
   font-size: 2rem;
+}
+
+.edit-form form p{
+  padding: 0.7rem 0.6rem;
+  border-radius: 0.2rem;
+  background-color: #e87c03;
 }
 
 .edit-form .form-group{
@@ -69,3 +89,15 @@
   font-size: 1.3rem;
   color: white;
 }
+
+@media screen and (max-width: 458px){
+  .edit-form{
+    min-width: 300px;
+  }
+}
+@media screen and (min-width: 900px){
+  .overlay-icon{
+    left: 85vw;
+  }
+}
+  
