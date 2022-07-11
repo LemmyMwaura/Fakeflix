@@ -1,0 +1,162 @@
+.accordion-wrapper {
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+  padding: 4rem;
+  color: white;
+  border-bottom: 8px solid #222;
+}
+
+.accordion-wrapper h1 {
+  font-size: clamp(1.5rem, 1rem + 3vw, 3.2rem);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60vw;
+}
+
+.item-wrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 1px;
+  background-color: #303030;
+  padding: 0.8em 2.2em 0.8em 1.2em;
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.item-wrapper::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 1px;
+  width: 100%;
+  top: 85px;
+  left: 0;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h3 {
+  font-weight: 400;
+}
+
+.accordion-tooltip {
+  font-size: 2.2rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.accordion-tooltip.show {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.answer.show {
+  height: auto;
+  margin-top: 2.5rem;
+  max-height: 999px;
+  transition: all 0.3s ease;
+}
+
+.accordion-footer{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordion-footer h4{
+  font-weight: 500;
+  font-size: clamp(0.8rem, calc(0.5rem + 2vw), 1.25rem);
+}
+
+.accordion-input {
+  display: grid;
+  width: 700px;
+  grid-template-columns: 1.5fr 1fr;
+  height: 3.5rem;
+}
+
+.accordion-input input {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-size: normal;
+  border: none;
+  outline: none;
+}
+
+.accordion-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #e40914;
+  cursor: pointer;
+}
+
+.accordion-btn span {
+  font-size: clamp(0.5rem, calc(0.8rem + 2vw), 1.6rem);
+  font-weight: 500;
+  color: white;
+}
+
+.accordion-btn .accordion-icon {
+  font-size: 1rem;
+  color: white !important;
+}
+
+@media screen and (max-width: 900px) {
+  .accordion {
+    width: 70vw;
+  }
+  .accordion-input {
+    gap: 10px;
+    width: 80vw;
+    height: auto;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+  .accordion-input input {
+   width: 100%;
+  }
+  .accordion-btn {
+    max-width: 12rem;
+    justify-self: center;
+  }
+  .accordion-footer h4{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .accordion {
+    width: 80vw;
+  }
+  .accordion-wrapper {
+    padding: 2rem;
+  }
+  .accordion-wrapper h1 {
+    font-size: clamp(1rem, 1rem + 3vw, 1.5rem);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .accordion {
+    width: 80vw;
+  }
+}
