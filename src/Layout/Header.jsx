@@ -8,7 +8,7 @@ import RequireAuth from "../components/RequireAuth"
 
 //components
 import HomeScreen from "./HomeScreen"
-import Login from "./Login"
+import LandingPage from './LandingPage'
 import SignIn from "./SignIn"
 import SignUp from "./SignUp"
 import Profile from "./Profile"
@@ -79,7 +79,7 @@ function Header() {
           path="/"
           element={
             <CheckAuth>
-              <Login />
+              <LandingPage />
             </CheckAuth>
           }
         ></Route>

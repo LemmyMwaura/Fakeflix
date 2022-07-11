@@ -1,4 +1,4 @@
-.login-banner {
+.landing-banner {
   color: white;
   position: relative;
   background-image: url(../assets/images/home-banner-image.jpg);
@@ -9,31 +9,31 @@
   border-bottom: 8px solid #222;
 }
 
-.login-nav {
+.landing-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 2.5rem;
 }
 
-.login-nav * {
+.landing-nav * {
   z-index: 2;
   color: white;
 }
 
-.login-nav svg {
+.landing-nav svg {
   width: 7rem;
   z-index: 5;
 }
 
-.login-nav .signup {
+.landing-nav .signup {
   padding: 0.4rem 1rem;
   font-size: 1rem;
   border-radius: 0.2rem;
   background-color: #e50914;
 }
 
-.login-fade-in-top {
+.landing-fade-in-top {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.login-fade-in-bottom {
+.landing-fade-in-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -51,7 +51,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 }
 
-.login-overlay {
+.landing-overlay {
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
@@ -60,7 +60,7 @@
   height: 100%;
 }
 
-.login-content {
+.landing-content {
   z-index: 2;
   position: absolute;
   top: 56%;
@@ -72,34 +72,34 @@
   text-align: center;
 }
 
-.login-content h1 {
+.landing-content h1 {
   font-size: clamp(2rem, calc(1.8rem + 1.7vw), 3.2rem);
   margin-bottom: 1rem;
   line-height: 1.1;
 }
 
-.login-content h2 {
+.landing-content h2 {
   font-size: clamp(0.5rem, calc(0.5rem + 2vw), 1.6rem);
   font-weight: normal;
   margin-bottom: 2rem;
   line-height: 1;
 }
 
-.login-content h4 {
+.landing-content h4 {
   font-size: clamp(0.5rem, calc(0.5rem + 2vw), 1.25rem);
   font-weight: 400;
   margin-bottom: 1rem;
   line-height: 1;
 }
 
-.login-input {
+.landing-input {
   display: grid;
   width: 100%;
   grid-template-columns: 1.5fr 1fr;
   height: 3.5rem;
 }
 
-.login-input input {
+.landing-input input {
   padding: 0.7rem 1rem;
   font-size: 1rem;
   border: none;
@@ -129,12 +129,12 @@
 }
 
 @media screen and (max-width: 930px) {
-  .login-input {
+  .landing-input {
     gap: 20px;
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
   }
-  .login-input input {
+  .landing-input input {
     width: 100%;
   }
   .input-btn {
@@ -144,34 +144,34 @@
 }
 
 @media screen and (max-width: 890px) {
-  .login-content{
+  .landing-content{
     width: 60vw;
   }
 }
 @media screen and (max-width: 680px) {
-  .login-content{
+  .landing-content{
     width: 65vw;
   }
-  .login-content h2 {
+  .landing-content h2 {
     margin-bottom: 1rem;
   }
 }
 @media screen and (max-width: 580px) {
-  .login-banner{
+  .landing-banner{
     height: 80vh;
   }
-  .login-nav svg {
+  .landing-nav svg {
     width: 5rem;
   }
-  .login-nav .signup {
+  .landing-nav .signup {
     font-size: 0.8rem;
   }
-  .login-content{
+  .landing-content{
     width: 75vw;
   }
 }
 @media screen and (max-width: 400px) {
-  .login-content{
+  .landing-content{
     width: 85vw;
   }
 }

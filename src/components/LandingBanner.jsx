@@ -1,17 +1,14 @@
 import { GrNext } from "react-icons/gr"
 import { Link } from "react-router-dom"
 
-//components
-import HomeInfo from "./HomeInfo"
-
-export default function Login() {
+export default function LandingBanner() {
   return (
     <>
-      <div className="login-banner">
-        <div className='login-overlay'></div>
-        <div className="login-fade-in-top"></div>
-        <div className="login-fade-in-bottom"></div>
-        <nav className="login-nav">
+      <div className="landing-banner">
+        <div className='landing-overlay'></div>
+        <div className="landing-fade-in-top"></div>
+        <div className="landing-fade-in-bottom"></div>
+        <nav className="landing-nav">
           <svg
             viewBox="0 0 111 30"
             className="svg-icon svg-icon-netflix-logo"
@@ -29,14 +26,14 @@ export default function Login() {
             Sign In
           </Link>
         </nav>
-        <div className='login-content'>
+        <div className='landing-content'>
           <h1>Unlimited movies, TV shows, and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
           <h4>
             Ready to watch? Enter your email to create or restart your
             membership.
           </h4>
-          <div className="login-input">
+          <div className="landing-input">
             <input type="text" placeholder="Email address" />
             <button className="input-btn">
               <span>Get Started</span>
@@ -45,7 +42,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <HomeInfo />
     </>
   )
 }
