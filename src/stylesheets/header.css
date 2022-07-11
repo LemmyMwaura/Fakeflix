@@ -1,4 +1,4 @@
-.primary-nav{
+.primary-nav {
   height: 3rem;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   z-index: 100;
 }
 
-.left{
+.left {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -26,39 +26,46 @@
   gap: 10px;
 }
 
-.profile-image{
+.profile-image {
   width: 30px;
   border-radius: 0.2rem;
 }
 
-.primary-nav a{
+.primary-nav a {
   color: #fff;
   font-size: 1rem;
   transition: 0.5s ease;
 }
 
-.scrolled{
+.scrolled {
   background-color: black;
 }
 
-.svg-icon-netflix-logo{
+.svg-icon-netflix-logo {
   width: 4rem;
   height: 4rem;
   fill: #e50914;
   transform: translateY(0.15rem);
 }
 
-@media screen and (max-width: 768px){
-  .primary-nav a{
+.primary-nav .left a:nth-child(5),
+.primary-nav .left a:nth-child(3),
+.primary-nav .left a:nth-child(4),
+.primary-nav .profile a:first-child {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .primary-nav a {
     font-size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 580px) {
   .primary-nav .left a:nth-child(5),
   .primary-nav .left a:nth-child(3),
   .primary-nav .left a:nth-child(4),
-  .primary-nav .profile a:first-child{
+  .primary-nav .profile a:first-child {
     display: none;
   }
 }

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import Banner from "../components/Banner"
 import RowList from "../components/RowList"
 import Modal from "../components/Modal"
+import Footer from "../Layout/Footer"
 
 //utils
 import requests from "../utils/Requests"
@@ -17,6 +18,7 @@ export default function HomeScreen() {
       {showModal && <Modal />}
       <Banner link={fetchNetflixOriginals} />
       <RowList />
+      <Footer />
     </div>
   )
 }
