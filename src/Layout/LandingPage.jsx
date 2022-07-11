@@ -1,5 +1,6 @@
-import Accordion from '../components/Accordion'
+import Footer from './Footer'
 import HomeInfo from './HomeInfo'
+import Accordion from '../components/Accordion'
 import LandingBanner from '../components/LandingBanner'
 
 const LandingPage = () => {
@@ -8,6 +9,7 @@ const LandingPage = () => {
       <LandingBanner />
       <HomeInfo />
       <Accordion />
+      <Footer />
     </div>
   )
 }
