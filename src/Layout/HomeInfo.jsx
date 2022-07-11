@@ -1,19 +1,21 @@
 import React from "react"
+import { homeInfoDetails } from "../utils/HomeInfo"
 
 const HomeInfo = () => {
   return (
     <div className="info">
       <div className="info-container">
-        <div className="info-wrapper">
-          <div className="info-text">
-            <h2>Enjoy on your TV.</h2>
-            <p>
-              Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV,
-              Blu-ray players, and more.
-            </p>
-          </div>
-          <div className="info-image" alt=""></div>
-        </div>
+        {homeInfoDetails.map((detail) => {
+          return (
+            <div className={`info-wrapper ${detail.switch && 'reverse'}`} key={detail.id}>
+              <div className="info-text">
+                <h2>{detail.title}</h2>
+                <p>{detail.description}</p>
+              </div>
+              <img className="info-image" src={detail.image} alt="" />
+            </div>
+          )
+        })}
       </div>
     </div>
   )

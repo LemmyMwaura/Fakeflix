@@ -20,10 +20,10 @@ function Header() {
   const user = useSelector(({ user }) => user.user)
 
   const handleScroll = () => {
-    if (nav.current && scrollY > 100) {
-      nav.current.classList.add("scrolled")
+    if (nav.current !== null && scrollY > 100) {
+      nav.current?.classList.add("scrolled")
     } else {
-      nav.current.classList.remove("scrolled")
+      nav.current?.classList.remove("scrolled")
     }
   }
 

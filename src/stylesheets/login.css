@@ -152,6 +152,9 @@
   .login-content{
     width: 65vw;
   }
+  .login-content h2 {
+    margin-bottom: 1rem;
+  }
 }
 @media screen and (max-width: 580px) {
   .login-banner{
