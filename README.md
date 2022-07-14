@@ -21,7 +21,7 @@ ___
 ### Introduction
 Netflix Clone
 
-This is my attempt at creating a mid-level web application that highly depends on making a lot of network requests to an API that works with images (high load) and finding ways to mitigate this requests and minimise load on the server.
+This is my attempt at creating a mid-level web application that highly depends on making a lot of network requests to an API endpoint [works with images = high load] and finding ways to mitigate this requests and minimise load on the server.
 
 The application is built with React and uses react-query to manage the data fetching. Categories Data is cached locally (using react-query) and is updated after every 15mins while banner data is updated consistently on component mount and also after every 10s. This results in a much better user experience.
 
