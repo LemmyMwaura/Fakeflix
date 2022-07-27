@@ -58,7 +58,7 @@ const SignUp = () => {
           <h2>Sign Up</h2>
           {firebaseErr && <div className="firebase-error">{firebaseErr}</div>}
           <div className="firebase-error">
-            This is a fake Netflix app. Use a dummy account instead e.g
+            This is a clone Netflix app. Use a dummy account instead e.g
             name@name.com.
           </div>
           <input
