@@ -27,21 +27,21 @@ const movieCategories = [
     title: "Comedy Movies",
     link: requests.fetchComedyMovies,
   },
-  {
-    id: 6,
-    title: "Romance Movies",
-    link: requests.fetchRomanceMovies,
-  },
-  {
-    id: 8,
-    title: "Documentaries",
-    link: requests.fetchDocumentaries,
-  },
-  {
-    id: 7,
-    title: "Horror Movies",
-    link: requests.fetchHorrorMovies,
-  },
+  // {
+  //   id: 6,
+  //   title: "Romance Movies",
+  //   link: requests.fetchRomanceMovies,
+  // },
+  // {
+  //   id: 8,
+  //   title: "Documentaries",
+  //   link: requests.fetchDocumentaries,
+  // },
+  // {
+  //   id: 7,
+  //   title: "Horror Movies",
+  //   link: requests.fetchHorrorMovies,
+  // },
   {
     id: 9,
     title: "TV Series/Sitcoms",

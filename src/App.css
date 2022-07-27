@@ -1,6 +1,5 @@
 @import "./stylesheets/header.css";
 @import "./stylesheets/banner.css";
-@import "./stylesheets/login.css";
 @import "./stylesheets/signin.css";
 @import "./stylesheets/homeinfo.css";
 @import "./stylesheets/modal.css";
@@ -9,6 +8,7 @@
 @import "./stylesheets/editform.css";
 @import "./stylesheets/accordion.css";
 @import "./stylesheets/footer.css";
+@import "./stylesheets/landingbanner.css";
 
 *,
 ::after,
