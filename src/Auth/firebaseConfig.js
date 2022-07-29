@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"
-import { getFirestore } from "firebase/firestore"
 import {
   getAuth,
   signOut,
@@ -13,15 +12,14 @@ import {
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_KEY,
-  authDomain: "netflix-clone-f26fe.firebaseapp.com",
-  projectId: "netflix-clone-f26fe",
-  storageBucket: "netflix-clone-f26fe.appspot.com",
-  messagingSenderId: "1010281995041",
-  appId: "1:1010281995041:web:81554fcac53fa0c6edfc60",
-}
+  authDomain: "fakeflix-9416f.firebaseapp.com",
+  projectId: "fakeflix-9416f",
+  storageBucket: "fakeflix-9416f.appspot.com",
+  messagingSenderId: "1050648784179",
+  appId: "1:1050648784179:web:354c6b94959fd4e1bc6246"
+};
 
 const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
 const auth = getAuth(app)
 
 export {
@@ -33,5 +31,3 @@ export {
   signOut,
   auth,
 }
-
-export default db
